@@ -7,6 +7,7 @@ type IconPropsType = {
     width?: string;
     height?: string;
     viewBox?: string;
+    customStyles?: React.CSSProperties;
 }
 
 type IconWrapperPropsType = {
@@ -20,6 +21,7 @@ export const Icon = (props: IconPropsType) => {
             <svg width={props.width || "50px"}
                  height={props.height || "50px"}
                  viewBox={props.viewBox || "0 0 50 50"}
+                 style = {props.customStyles}
                  xmlns="http://www.w3.org/2000/svg"
                  xmlnsXlink="http://www.w3.org/1999/xlink">
                 <use xlinkHref={`${iconsSprite}#${props.iconId}`}></use>
@@ -32,6 +34,4 @@ const IconWrapper = styled.div<IconWrapperPropsType>`
     width: ${props => props.width || "50px"};
     height: ${props => props.height || "50px"};
     display: flex;
-    border: 1px solid red;
-    background-color: #fff;
 `

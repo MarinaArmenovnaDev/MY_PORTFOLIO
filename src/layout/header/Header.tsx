@@ -31,6 +31,7 @@ const StyledHeader = styled.header`
 const Logo = styled.a`
     text-transform: uppercase;
     color: ${Theme.colors.accentFont};
-    font: 400 36px "Nunito Sans", sans-serif;
-
+    font-weight: 400;
+    font-size: 36px;
+   font-family: "Nova Mono", serif;
 `

@@ -45,9 +45,8 @@ export const ProgressIcon = (props: IconPropsType) => {
 
 const IconContainer = styled.div`
     display: flex;
-    align-items: center;
-    gap: 14px; 
-    border: 1px solid red; 
+    align-items: flex-end;
+    gap: 14px;
     max-width: 606px;
 `;
 
@@ -62,6 +61,7 @@ const ProgressBar = styled.div<ProgressTextPropsType>`
     width: 210px;
     height: 8px;
     background-color: #ccc; 
+    margin-bottom: 3px;
 
     //Розовая часть прогрессбара
     &::before {
@@ -83,6 +83,4 @@ const ProgressText = styled.span<{ textPosition?: number }>`
     transform: translateX(-25px); 
     font-size: 14px;
     font-weight: 400;
-    color: ${Theme.colors.font};
-    white-space: nowrap;
 `;

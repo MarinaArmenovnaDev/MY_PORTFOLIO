@@ -49,7 +49,7 @@ export const Works = () => {
         <section>
             <Container>
                 <SectionTitle> Latest work </SectionTitle>
-                <FlexWrapper wrap="wrap" justify="center">
+                <FlexWrapper wrap="wrap" justify="center" gap={"45px"}>
                     {WorksData.map((w) => (
                         <Work key={w.src}>
                             <figure>
@@ -76,14 +76,17 @@ const WorkImage = styled.img`
     width: 330px;
     height: 330px;
     object-fit: cover;
-    border-radius: 10px;
 `;
 
 const WorkTitle = styled.h3`
-    margin: 10px 0;
+    margin: 25px 0 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #2d2d2d;
 `;
 
 const WorkDescription = styled.p`
-    font-size: 14px;
-    color: #666;
+    font-weight: 400;
+    font-size: 17px;
+    color: #2d2d2d;
 `;

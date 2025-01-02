@@ -8,26 +8,48 @@ import {ProgressIcon} from "../../../components/icon/progressIcon/ProgressIcon";
 import {Photo} from "../../../components/Photo";
 import {TextWrapper} from "../../../components/TextWrapper";
 import {Theme} from "../../../styles/Theme";
+import {PhotoWrapper} from "../../../components/PhotoWrapper";
+import {Text} from "../../../components/Text";
+
+const progressIconsData = [
+    {iconId: "photoshop", progress: 70, textPosition: 70},
+
+    {iconId: "figma", progress: 50, textPosition: 50},
+
+    {iconId: "ai", progress: 80, textPosition: 80},
+]
+
 
 export const About = () => {
     return (
         <StyledAbout>
             <Container>
                 <FlexWrapper justify="space-between">
-                    <PhotoWrapper>
-                        <Photo src={photo} maxWidth={"361px"} height={"452px"} />
+                    <PhotoWrapper width={"410px"} height={"502px"} bottom={"-50px"} right={"-50px"}
+                                  backgroundColor={"rgba(251, 63, 92, 0.1)"}>
+                        <Photo src={photo} maxWidth={"361px"} height={"452px"}/>
                     </PhotoWrapper>
                     <TextWrapper maxWidth={"600px"}>
                         <Title>I am a creative Graphic & UI Designer</Title>
                         <Text>
-                            I’m a Graphics Designer,Designng has become my everyday affair. masting styles,grids cant be less interesting,Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            I’m a Graphics Designer,Designng has become my everyday affair. masting styles,grids cant be
+                            less interesting,Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         </Text>
                         <Button>Download CV</Button>
-                        <Button backgroundColor={"transparent"} borderColor={"1px solid #fb3f5c"} color={Theme.colors.accent}>View Portfolio</Button>
+                        <Button backgroundColor={"transparent"} borderColor={"1px solid #fb3f5c"}
+                                color={Theme.colors.accent}>View Portfolio</Button>
                         <IconWrapper>
-                            <ProgressIcon iconId={"photoshop"} width={"45px"} height={"45px"} viewBox={"0 0 45 45"} progress={70} textPosition={70}/>
-                            <ProgressIcon iconId={"figma"} width={"45px"} height={"45px"} viewBox={"0 0 45 45"} progress={50} textPosition={50} />
-                            <ProgressIcon iconId={"ai"} width={"45px"} height={"45px"} viewBox={"0 0 45 45"} progress={80} textPosition={80} />
+                            {progressIconsData.map((icon, index) => (
+                                <ProgressIcon
+                                    key={index}
+                                    iconId={icon.iconId}
+                                    width={"45px"}
+                                    height={"45px"}
+                                    viewBox={"0 0 45 45"}
+                                    progress={icon.progress}
+                                    textPosition={icon.textPosition}
+                                />
+                            ))}
                         </IconWrapper>
                     </TextWrapper>
                 </FlexWrapper>
@@ -35,29 +57,6 @@ export const About = () => {
         </StyledAbout>
     );
 };
-
-const PhotoWrapper = styled.div`
-    width: 410px;
-    height: 502px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-
-    &::before {
-        content: '';
-        position: absolute;
-        bottom: -50px;
-        right: -49px;
-        width: 100%;
-        height: 100%;
-        border-radius: 4px;
-        background-color: rgba(251, 63, 92, 0.1);
-        clip-path: polygon(100% 0, 100% 100%, 0 100%);
-        z-index: -1;
-    }
-`;
 
 const StyledAbout = styled.section`
     display: flex;
@@ -70,16 +69,9 @@ const Title = styled.h1`
     text-transform: capitalize;
 `;
 
-const Text = styled.p`
-    font-weight: 400;
-    font-size: 24px;
-    letter-spacing: 0.06em;
-    margin: 16px 0 48px;
-`;
-
 const IconWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 16px; 
+    gap: 16px;
     margin-top: 64px;
 `;
