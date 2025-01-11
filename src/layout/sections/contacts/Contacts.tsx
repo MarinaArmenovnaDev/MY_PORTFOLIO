@@ -10,7 +10,7 @@ export const Contacts = () => {
         <StyledContacts>
             <Container>
                 <SectionTitle>Get in Touch</SectionTitle>
-                <FlexWrapper justify={'space-between'} wrap={'wrap'}>
+                <FlexWrapper justify={'space-around'} wrap={'wrap'}>
                     <StyledForm>
                         <Label>Your Email Address
                             <Field type={"text"} placeholder={"something@website.com"}/>
@@ -46,8 +46,6 @@ export const Contacts = () => {
 };
 
 const StyledContacts = styled.section`
-    min-height: 600px;
-    height: 100%;
 `;
 
 const StyledForm = styled.form`

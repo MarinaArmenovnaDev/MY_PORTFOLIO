@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         color: ${Theme.colors.font}
         line-height: 1.2;
+        min-width: 375px;
     }
     
     a {
@@ -32,6 +33,22 @@ export const GlobalStyle = createGlobalStyle`
     button{
         background-color: unset;
         border: none;
+    }
+    
+    section{
+        margin-bottom: 150px;
+        
+        @media ${Theme.media.desktop}{
+            margin-bottom: 100px;
+        }
+
+        @media ${Theme.media.mobile}{
+            
+            &:nth-child(3){
+                margin-bottom: 0;
+            }
+         
+        }
     }
 
     section:nth-of-type(2n){

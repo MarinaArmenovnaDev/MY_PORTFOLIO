@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
+import {font} from "../../../styles/Common";
+import {Theme} from "../../../styles/Theme";
 
 export const Results = () => {
     return (
@@ -31,12 +33,24 @@ const GridContainer = styled.div`
     justify-self: center;
     text-align: center;
     align-items: center;
-    border: 1px solid red;
+    //border: 1px solid red;
 `;
 
 const GridItem = styled.div`
-  padding: 20px 0;
-  font-size: 24px;
-  font-weight: bold;
+padding: 20px 0;
+    
+    /* Стили для первых трех элементов */
+    &:nth-child(-n+3) {
+        ${font({weight:700, Fmax:48, Fmin:12})}
+    }
+
+    /* Стили для остальных элементов */
+    &:nth-child(n+4) {
+        ${font({weight:700, Fmax:36, Fmin: 11})}
+    }
+    
+    @media ${Theme.media.mobile}{
+        padding: 5px 0;
+    }
 `;
 

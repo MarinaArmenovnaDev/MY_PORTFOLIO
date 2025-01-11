@@ -46,7 +46,7 @@ const WorksData = [
 export const Works = () => {
     return (
 
-        <section>
+        <StyledWorks>
             <Container>
                 <SectionTitle> Latest work </SectionTitle>
                 <FlexWrapper wrap="wrap" justify="center" gap={"45px"}>
@@ -63,10 +63,14 @@ export const Works = () => {
                     ))}
                 </FlexWrapper>
             </Container>
-        </section>
+        </StyledWorks>
 
     );
 };
+
+const StyledWorks = styled.section`
+   
+`
 
 const Work = styled.div`
     margin: 10px;

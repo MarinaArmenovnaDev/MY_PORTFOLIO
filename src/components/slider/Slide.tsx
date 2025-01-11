@@ -3,6 +3,7 @@ import person from "../../assets/images/review.webp";
 import styled from "styled-components";
 import {Icon} from "../icon/Icon";
 import {Theme} from "../../styles/Theme";
+import {font} from "../../styles/Common";
 
 type StarWrapperPropsType = {
     gap?: string;
@@ -38,6 +39,10 @@ const StyledSlide = styled.div`
     margin: 0 auto;
     border-radius: 140px 0;
     background-color: ${Theme.colors.primaryBg};
+
+    @media ${Theme.media.mobile}{
+        border-radius: 60px 0;
+    }
 `
 
 
@@ -45,26 +50,33 @@ const Photo = styled.img`
     width: 104px;
     height: 104px;
     border-radius: 50%;
+    
+    @media ${Theme.media.mobile}{
+        width: 74px;
+        height: 74px;
+    }
 `
 
 const Name = styled.span`
-    font: 600 24px / 1.08333 "Poppins", sans-serif;
+    ${font({ family: "Poppins", weight: 600, Fmax: 24, Fmin: 18 })}
     text-align: center;
     margin-top: 20px;
 `
 
 const Status = styled.span`
-    font: 400 18px / 1.44444 "Poppins", sans-serif;
+    ${font({ family: "Poppins",color: Theme.colors.accent, weight: 400, lineHeight: 1.44, Fmax: 18, Fmin: 14 })}
     text-align: center;
-    color: ${Theme.colors.accent};
     margin-bottom: 20px;
 `
 
 const Review = styled.p`
-    font: 400 18px / 1.44444 "Poppins", sans-serif;
+    ${font({ family: "Poppins",color: Theme.colors.secondaryFont, lineHeight: 1.44, weight: 400, Fmax: 18, Fmin: 12 })}
     text-align: center;
     max-width: 612px;
-    color: ${Theme.colors.secondaryFont};
+    
+    @media ${Theme.media.mobile}{
+        line-height: 2.1;
+    }
 `
 
 

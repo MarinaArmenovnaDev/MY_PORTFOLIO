@@ -7,5 +7,11 @@ export const Theme = {
         font: "#191018",
         secondaryFont: "#5d616f",
         accentFont: "#f8eeef"
+    },
+
+    media: {
+        desktop: "screen and (max-width: 1130px)",
+        tablet: "screen and (max-width: 992px)",
+        mobile: "screen and (max-width: 576px)",
     }
 }

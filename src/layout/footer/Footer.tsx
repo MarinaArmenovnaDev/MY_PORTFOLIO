@@ -24,10 +24,10 @@ export const Footer = () => {
         <StyledFooter>
             <Container>
                 <FlexWrapper direction={"column"} gap={"35px"} >
-                    <FlexWrapper justify={"space-between"} alignItems={"center"} wrap={"wrap"} gap={"30px"}>
+                    <FlexWrapper justify={"space-around"} alignItems={"center"} gap={"30px"} wrap={"wrap-reverse"}>
                         {footerData.map((item) => (
                             <Part key={item.id}>
-                                <Icon iconId={item.iconId} width={"25"} height={"23"} viewBox="0 0 25 23" />
+                                {item.iconId && <Icon iconId={item.iconId} width={"25"} height={"23"} viewBox="0 0 25 23" />}
                                 <span>{item.text}</span>
                             </Part>
                         ))}
@@ -53,10 +53,25 @@ const StyledFooter = styled.footer`
     align-items: center;
     min-height: 230px;
     height: 100%;
+
+    @media screen and (max-width: 1006px) {
+        ${FlexWrapper}:first-child {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+    
+    @media ${Theme.media.mobile}{
+        display: none;
+    }
+    
+    
 `;
 
 const Part = styled.div`
     display: flex;
+    align-items: center; 
     gap: 18px;
     position: relative;
 
@@ -66,14 +81,20 @@ const Part = styled.div`
         right: -15px;
         width: 3px;
         height: 100%;
-        background-color: ${Theme.colors.accentFont};
-    }
-    
+            background-color: ${Theme.colors.accentFont};
+}
+
     span {
         font-weight: 500;
         font-size: 24px;
         text-transform: lowercase;
         color: ${Theme.colors.accentFont};
+    }
+
+    @media screen and (max-width: 1006px) {
+        &:not(:last-child)::after {
+            display: none;
+        }
     }
 `;
 

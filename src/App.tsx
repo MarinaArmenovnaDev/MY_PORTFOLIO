@@ -7,7 +7,6 @@ import {Works} from "./layout/sections/works/Works";
 import {Testimony} from "./layout/sections/testimony/Testimony";
 import {Contacts} from "./layout/sections/contacts/Contacts";
 import {Footer} from "./layout/footer/Footer";
-// import {Footer} from "./layout/footer/Footer";
 
 
 function App() {

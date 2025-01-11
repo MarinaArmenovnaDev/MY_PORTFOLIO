@@ -10,6 +10,7 @@ import {TextWrapper} from "../../../components/TextWrapper";
 import {Theme} from "../../../styles/Theme";
 import {PhotoWrapper} from "../../../components/PhotoWrapper";
 import {Text} from "../../../components/Text";
+import {font} from "../../../styles/Common";
 
 const progressIconsData = [
     {iconId: "photoshop", progress: 70, textPosition: 70},
@@ -24,9 +25,9 @@ export const About = () => {
     return (
         <StyledAbout>
             <Container>
-                <FlexWrapper justify="space-between">
-                    <PhotoWrapper width={"410px"} height={"502px"} bottom={"-50px"} right={"-50px"}
-                                  backgroundColor={"rgba(251, 63, 92, 0.1)"}>
+                <FlexWrapper justify="space-around" wrap={"wrap"}>
+                    <PhotoWrapper maxWidth={"410px"} height={"502px"} right={"-20px"} bottom={"-20px"}
+                                  backgroundColor={"rgba(251, 63, 92, 0.1)"} borderRadius={"10px"}>
                         <Photo src={photo} maxWidth={"361px"} height={"452px"}/>
                     </PhotoWrapper>
                     <TextWrapper maxWidth={"600px"}>
@@ -60,12 +61,11 @@ export const About = () => {
 
 const StyledAbout = styled.section`
     display: flex;
-    height: 720px;
+    
 `;
 
 const Title = styled.h1`
-    font-weight: 700;
-    font-size: 48px;
+    ${font({weight:700, Fmax:48, Fmin:28})}
     text-transform: capitalize;
 `;
 
@@ -74,4 +74,10 @@ const IconWrapper = styled.div`
     flex-wrap: wrap;
     gap: 16px;
     margin-top: 64px;
+    margin-bottom: 64px;
+    
+    @media ${Theme.media.mobile}{
+        justify-content: center;
+        align-items: center;
+    }
 `;

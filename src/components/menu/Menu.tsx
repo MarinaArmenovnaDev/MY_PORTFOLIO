@@ -42,6 +42,9 @@ export const Menu = () => {
 };
 
 const StyledNav = styled.nav`
+    @media ${Theme.media.desktop} {
+        display : none;
+    }
 `
 
 const NavList = styled.ul`

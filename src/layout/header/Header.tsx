@@ -4,6 +4,7 @@ import {Menu} from "../../components/menu/Menu";
 import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Theme} from "../../styles/Theme";
+import {MobileMenu} from "../../components/menu/mobileMenu/MobileMenu";
 
 
 export const Header = () => {
@@ -13,6 +14,7 @@ export const Header = () => {
                 <FlexWrapper justify="space-between">
                     <Logo href={""}>Damadams</Logo>
                     <Menu/>
+                    <MobileMenu/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -20,18 +22,13 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    background-color: rgba(251, 63, 92, 0.93);
+    background-color:${Theme.colors.accent};
     padding: 20px 0;
-    //position: fixed;
-    //top: 0;
-    //left: 0;
-    //right: 0;
-    //Z-index: 999999;
 `
 const Logo = styled.a`
     text-transform: uppercase;
     color: ${Theme.colors.accentFont};
     font-weight: 400;
     font-size: 36px;
-   font-family: "Nova Mono", serif;
+    font-family: "Nova Mono", serif;
 `

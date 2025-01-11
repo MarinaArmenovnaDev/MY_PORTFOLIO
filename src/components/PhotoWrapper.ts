@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import {Theme} from "../styles/Theme";
 
 type PhotoWrapperPropsType = {
-    width: string;
-    height: string;
-    bottom: string;
-    right: string;
+    maxWidth?: string;
+    height?: string;
+    bottom?: string;
+    right?: string;
     backgroundColor?: string;
+    borderRadius?: string;
 };
 
 export const PhotoWrapper = styled.div<PhotoWrapperPropsType>`
@@ -14,18 +16,32 @@ export const PhotoWrapper = styled.div<PhotoWrapperPropsType>`
     align-items: center;
     justify-content: center;
     z-index: 0;
-    width: ${props => props.width}; 
-    height: ${props => props.height}; 
-
+    max-width: ${props => props.maxWidth};
+    width: 100%;
+    height: ${props => props.height};
+    
     &::before {
         content: '';
         position: absolute;
-        bottom: ${props => props.bottom}; 
+        bottom: ${props => props.bottom};
         right: ${props => props.right};
         width: 100%;
         height: 100%;
-        background-color: ${props => props.backgroundColor || "rgba(251, 63, 92, 0.5)"}; 
+        background-color: ${props => props.backgroundColor || "rgba(251, 63, 92, 0.5)"};
         clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        border-radius: ${props => props.borderRadius};
         z-index: -1;
+        
     }
+
+    @media ${Theme.media.mobile} {
+        max-width: 306px;
+        width: 100%;
+        height: 376px;
+    }
+
+    @media ${Theme.media.desktop} {
+        margin-bottom: 57px;
+    }
+
 `;
