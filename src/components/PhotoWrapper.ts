@@ -36,6 +36,10 @@ export const PhotoWrapper = styled.div<PhotoWrapperPropsType>`
         
     }
 
+    @media ${Theme.media.tablet} {
+        margin: 0 auto;
+    }
+
     @media ${Theme.media.mobile} {
         max-width: 306px;
         width: 100%;
