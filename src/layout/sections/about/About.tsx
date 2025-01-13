@@ -27,7 +27,8 @@ export const About = () => {
             <Container>
                 <FlexWrapper justify="space-around" wrap={"wrap"}>
                     <PhotoWrapper maxWidth={"410px"} height={"502px"} right={"-20px"} bottom={"-20px"}
-                                  backgroundColor={"rgba(251, 63, 92, 0.1)"} borderRadius={"10px"}>
+                                  margin={"0 91px 0 0"}
+                                  backgroundColor={"rgba(251, 63, 92, 0.1)" } borderRadius={"10px"}>
                         <Photo src={photo} maxWidth={"361px"} height={"452px"}/>
                     </PhotoWrapper>
                     <TextWrapper maxWidth={"600px"}>
@@ -61,11 +62,11 @@ export const About = () => {
 
 const StyledAbout = styled.section`
     display: flex;
-    
+
 `;
 
 const Title = styled.h1`
-    ${font({weight:700, Fmax:48, Fmin:28})}
+    ${font({weight: 700, Fmax: 48, Fmin: 28})}
     text-transform: capitalize;
 `;
 
@@ -75,8 +76,8 @@ const IconWrapper = styled.div`
     gap: 16px;
     margin-top: 64px;
     margin-bottom: 64px;
-    
-    @media ${Theme.media.mobile}{
+
+    @media ${Theme.media.mobile} {
         justify-content: center;
         align-items: center;
     }

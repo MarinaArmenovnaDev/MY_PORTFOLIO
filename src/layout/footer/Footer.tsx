@@ -8,7 +8,7 @@ import {Theme} from "../../styles/Theme";
 const footerData = [
     { id: 1, iconId: "phone", text: "09028793244" },
     { id: 2, iconId: "mail", text: "shalewa64@gmail.com" },
-    { id: 3, iconId: "", text: "497 Evergreen Rd. Roseville, CA 95673" },
+    { id: 3, iconId: "place", text: "497 Evergreen Rd. Roseville, CA 95673" },
 ];
 
 const socialIconData = [
@@ -24,7 +24,7 @@ export const Footer = () => {
         <StyledFooter>
             <Container>
                 <FlexWrapper direction={"column"} gap={"35px"} >
-                    <FlexWrapper justify={"space-around"} alignItems={"center"} gap={"30px"} wrap={"wrap-reverse"}>
+                    <FlexWrapper  justify={"space-around"}  gap={"30px"} >
                         {footerData.map((item) => (
                             <Part key={item.id}>
                                 {item.iconId && <Icon iconId={item.iconId} width={"25"} height={"23"} viewBox="0 0 25 23" />}
@@ -55,18 +55,19 @@ const StyledFooter = styled.footer`
     height: 100%;
 
     @media screen and (max-width: 1006px) {
-        ${FlexWrapper}:first-child {
+        ${FlexWrapper}:first-child{
             flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            margin: 50px 0;
         }
     }
     
+    
     @media ${Theme.media.mobile}{
-        display: none;
+        //padding: 80px 0;
+        ${FlexWrapper}:first-child  {
+            margin-bottom: 75px;
+        }
     }
-    
-    
 `;
 
 const Part = styled.div`
@@ -90,15 +91,23 @@ const Part = styled.div`
         text-transform: lowercase;
         color: ${Theme.colors.accentFont};
     }
+    
 
     @media screen and (max-width: 1006px) {
         &:not(:last-child)::after {
             display: none;
         }
     }
+
+    @media ${Theme.media.mobile} {
+        flex-direction: column;
+        gap: 5px; 
+        text-align: center;
+    }
 `;
 
 const SocialItem = styled.div`
     display: flex;
     align-items: center;
+    gap: 30px;
 `;

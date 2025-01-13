@@ -4,6 +4,7 @@ import {SectionTitle} from "../../../components/SectionTitle";
 import {Container} from "../../../components/Container";
 import {Button} from "../../../components/Button.";
 import {FlexWrapper} from "../../../components/FlexWrapper";
+import {font} from "../../../styles/Common";
 
 export const Contacts = () => {
     return (
@@ -54,22 +55,26 @@ const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     gap: 35px;
-
+    
+    
     textarea {
         resize: none;
         height: 155px;
         padding-top: 15px;
+        ${font({weight:400, Fmax:18, Fmin:11})}
     }
 `;
 
 const Label = styled.label`
     margin-bottom: 7px;
+    ${font({weight:400, Fmax:16, Fmin:11})}
 `;
 
 const Field = styled.input`
     width: 100%;
     height: 50px;
     padding: 0 15px;
+    ${font({weight:400, Fmax:18, Fmin:11})}
 `;
 
 const Navigation = styled.div`

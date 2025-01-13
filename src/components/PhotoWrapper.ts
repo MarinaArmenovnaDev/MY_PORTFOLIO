@@ -8,6 +8,7 @@ type PhotoWrapperPropsType = {
     right?: string;
     backgroundColor?: string;
     borderRadius?: string;
+    margin?: string;
 };
 
 export const PhotoWrapper = styled.div<PhotoWrapperPropsType>`
@@ -19,7 +20,8 @@ export const PhotoWrapper = styled.div<PhotoWrapperPropsType>`
     max-width: ${props => props.maxWidth};
     width: 100%;
     height: ${props => props.height};
-    
+    margin:${props => props.margin};
+
     &::before {
         content: '';
         position: absolute;

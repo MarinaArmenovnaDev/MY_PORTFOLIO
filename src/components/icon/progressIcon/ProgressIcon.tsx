@@ -2,6 +2,7 @@ import React from 'react';
 import iconsSprite from '../../../assets/images/icon-sprite.svg';
 import styled from "styled-components";
 import {Theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 type IconPropsType = {
     iconId: string;
