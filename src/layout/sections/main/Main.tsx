@@ -1,5 +1,5 @@
 import React from 'react';
-import mainImg from './../../../assets/images/mainPhoto.webp';
+import mainImg from './../../../assets/images/mainPhoto.jpg';
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Button } from "../../../components/Button.";
 import { Container } from "../../../components/Container";

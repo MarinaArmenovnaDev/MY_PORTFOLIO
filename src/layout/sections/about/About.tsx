@@ -1,5 +1,6 @@
 import React from 'react';
-import photo from "../../../assets/images/mainPhoto.webp";
+import photo from "../../../assets/images/mainPhoto.jpg";
+import photo2x from "../../../assets/images/mainPhoto@2x.jpg";
 import {Container} from "../../../components/Container";
 import {Button} from "../../../components/Button.";
 import {FlexWrapper} from "../../../components/FlexWrapper";
@@ -28,7 +29,7 @@ export const About: React.FC = () => {
                     <PhotoWrapper maxWidth={"410px"} height={"502px"} right={"-20px"} bottom={"-20px"}
                                   margin={"0 91px 0 0"}
                                   backgroundColor={"rgba(251, 63, 92, 0.1)" } borderRadius={"10px"}>
-                        <Photo src={photo} maxWidth={"361px"} height={"452px"}/>
+                        <Photo src={photo} srcSet={`${photo} 1x, ${photo2x} 2x`} maxWidth={"361px"} height={"452px"}/>
                     </PhotoWrapper>
                     <TextWrapper maxWidth={"600px"}>
                         <S.Title>I am a creative Graphic & UI Designer</S.Title>
