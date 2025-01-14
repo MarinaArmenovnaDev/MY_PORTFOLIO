@@ -1,60 +1,42 @@
-import React from 'react';
 import styled, {css} from "styled-components";
 import {Theme} from "../../../styles/Theme";
 
-const items = [
-    {
-        title: 'Home',
-        href: 'home',
-    },
-    {
-        title: 'About',
-        href: 'about',
-    },
-    {
-        title: 'Latest Works',
-        href: 'works',
-    },
-    {
-        title: 'Testimonials',
-        href: 'testimonials',
-    },
-    {
-        title: 'Contact',
-        href: 'contact',
+//menu
+const NavList = styled.ul`
+    display: flex;
+    gap: 52px;
+`
+const NavItems = styled.li`
+`
+
+const NavLink = styled.a`
+    font-weight: 400;
+    font-size: 24px;
+    color: ${Theme.colors.accentFont};
+    text-transform: capitalize;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 12px; 
+        transform: translateX(-50%);
+        bottom: -10px; 
+        width: 24px; 
+        height: 6px; 
+        border-radius: 55px;
+        background-color: ${Theme.colors.accentFont}; 
+        opacity: 0; 
+        transition: opacity 0.3s ease;
     }
-]
 
-export const MobileMenu = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
-
-    return (
-        <StyledMobileMenu>
-            <BurgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
-                <span></span>
-            </BurgerButton>
-
-            <MobileMenuPopup isOpen={isOpen}>
-                <NavList>
-                    {items.map((item, index) => {
-                        return (
-                            <NavItems key={index}>
-                                <NavLink href={item.href}>{item.title}</NavLink>
-                            </NavItems>
-                        )
-                    })}
-                </NavList>
-            </MobileMenuPopup>
-        </StyledMobileMenu>
-    );
-};
-
-const StyledMobileMenu = styled.nav`
-    display: none;
-
-    @media ${Theme.media.desktop} {
-        display: block;
+    &:hover::after {
+        opacity: 1;
     }
+`
+
+// MobileMenu
+const MobileMenu = styled.nav`
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
@@ -117,11 +99,6 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     }
 `;
 
-const NavList = styled.ul`
-    display: flex;
-    gap: 52px;
-`
-
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     position: fixed;
     background-color: rgba(251, 63, 92, 0.5);
@@ -146,31 +123,20 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     }
 `
 
-const NavItems = styled.li`
+//DesktopMenu
+const DesktopMenu = styled.nav`
 `
 
-const NavLink = styled.a`
-    font-weight: 400;
-    font-size: 24px;
-    color: ${Theme.colors.accentFont};
-    text-transform: capitalize;
-    position: relative;
 
-    &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -10px;
-        width: 24px;
-        height: 6px;
-        border-radius: 55px;
-        background-color: ${Theme.colors.accentFont};
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
 
-    &:hover::after {
-        opacity: 1;
-    }
-`
+
+export const S = {
+    NavList,
+    NavItems,
+    NavLink,
+    MobileMenu,
+    BurgerButton,
+    MobileMenuPopup,
+    DesktopMenu
+
+}

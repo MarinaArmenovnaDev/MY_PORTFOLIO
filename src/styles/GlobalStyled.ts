@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: ${Theme.colors.font}
+        color: ${Theme.colors.font};
         line-height: 1.2;
         min-width: 375px;
     }
@@ -39,17 +39,16 @@ export const GlobalStyle = createGlobalStyle`
         margin-bottom: 150px;
         
         @media ${Theme.media.desktop}{
-            margin-bottom: 100px;
+            margin-bottom: 78px;
         }
 
         @media ${Theme.media.mobile}{
-            
-            &:nth-child(3){
-                margin-bottom: 0;
+
+            &:last-of-type{
+                margin-bottom: 50px;
             }
-         
         }
-    }
+        }
 
     section:nth-of-type(2n){
         background-color: ${Theme.colors.primaryBg};

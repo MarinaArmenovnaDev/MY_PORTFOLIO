@@ -1,56 +1,21 @@
 import React from 'react';
-import styled from "styled-components";
-import {font} from "../../../styles/Common";
-import {Theme} from "../../../styles/Theme";
+import {S} from './Results_Styles'
 
-export const Results = () => {
+export const Results:React.FC = () => {
     return (
-        <StyledResult>
-            <GridContainer>
-                <GridItem>81+</GridItem>
-                <GridItem>97+</GridItem>
-                <GridItem>50</GridItem>
-                <GridItem>HAPPY CUSTOMERS</GridItem>
-                <GridItem>Completed Projects</GridItem>
-                <GridItem>Awards Won</GridItem>
-            </GridContainer>
-        </StyledResult>
+        <section>
+            <S.GridContainer>
+                <S.GridItem>81+</S.GridItem>
+                <S.GridItem>97+</S.GridItem>
+                <S.GridItem>50</S.GridItem>
+                <S.GridItem>HAPPY CUSTOMERS</S.GridItem>
+                <S.GridItem>Completed Projects</S.GridItem>
+                <S.GridItem>Awards Won</S.GridItem>
+            </S.GridContainer>
+        </section>
 
 
     )
 };
 
-const StyledResult = styled.section`
-`
-
-const GridContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 столбца
-    grid-template-rows: repeat(2, auto); // 2 строки
-    width: 100%;
-    max-width: 1170px;
-    
-    justify-self: center;
-    text-align: center;
-    align-items: center;
-    //border: 1px solid red;
-`;
-
-const GridItem = styled.div`
-padding: 20px 0;
-    
-    /* Стили для первых трех элементов */
-    &:nth-child(-n+3) {
-        ${font({weight:700, Fmax:48, Fmin:12})}
-    }
-
-    /* Стили для остальных элементов */
-    &:nth-child(n+4) {
-        ${font({weight:700, Fmax:36, Fmin: 11})}
-    }
-    
-    @media ${Theme.media.mobile}{
-        padding: 5px 0;
-    }
-`;
 

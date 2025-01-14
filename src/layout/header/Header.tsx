@@ -1,34 +1,35 @@
 import React from 'react';
-import styled from "styled-components";
-import {Menu} from "../../components/menu/Menu";
 import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import {Theme} from "../../styles/Theme";
-import {MobileMenu} from "../../components/menu/mobileMenu/MobileMenu";
+
+import {S} from './Header_Styles';
+import {DesktopMenu} from "./headerMenu/desktopMenu/DesktopMenu";
+import {MobileMenu} from "./headerMenu/mobileMenu/MobileMenu";
 
 
-export const Header = () => {
+export const Header: React.FC = () => {
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 1130;
+
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleWindowResize);
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
+
     return (
-        <StyledHeader>
+        <S.Header>
             <Container>
                 <FlexWrapper justify="space-between">
-                    <Logo href={""}>Damadams</Logo>
-                    <Menu/>
-                    <MobileMenu/>
+                    <S.Logo href={""}>Damadams</S.Logo>
+
+                    {width <= breakpoint? <MobileMenu/> :  <DesktopMenu/>}
+
+
                 </FlexWrapper>
             </Container>
-        </StyledHeader>
+        </S.Header>
     );
 };
 
-const StyledHeader = styled.header`
-    background-color:${Theme.colors.accent};
-    padding: 20px 0;
-`
-const Logo = styled.a`
-    text-transform: uppercase;
-    color: ${Theme.colors.accentFont};
-    font-weight: 400;
-    font-size: 36px;
-    font-family: "Nova Mono", serif;
-`
