@@ -2,12 +2,13 @@ import styled from "styled-components";
 import {Theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
 
+
+
 const GridContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr); // 3 столбца
     grid-template-rows: repeat(2, auto); // 2 строки
     width: 100%;
-    max-width: 1170px;
 
     justify-self: center;
     text-align: center;
@@ -20,6 +21,7 @@ const GridContainer = styled.div`
 const GridItem = styled.div`
     padding: 20px 0;
     text-transform: uppercase;
+    white-space: nowrap;
 
     //Стили для первых трех элементов 
 

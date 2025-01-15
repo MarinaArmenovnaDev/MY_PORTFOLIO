@@ -5,9 +5,15 @@ import {font} from "../../../styles/Common";
 const Main = styled.section`
     height: 100vh;
     display: flex;
+    background-color: ${Theme.colors.primaryBg};
+    padding-bottom: 110px;
     
     @media ${Theme.media.desktop}{
         height: max-content;
+    }
+    
+    @media ${Theme.media.mobile} {
+        padding-bottom: 65px;
     }
     
 `;

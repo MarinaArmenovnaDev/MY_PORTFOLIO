@@ -2,7 +2,7 @@ import React from 'react';
 import iconsSprite from '../../../assets/images/icon-sprite.svg';
 import styled from "styled-components";
 import {Theme} from "../../../styles/Theme";
-import {font} from "../../../styles/Common";
+import {FlexWrapper} from "../../FlexWrapper";
 
 type IconPropsType = {
     iconId: string;
@@ -25,8 +25,7 @@ type ProgressTextPropsType = {
 
 export const ProgressIcon = (props: IconPropsType) => {
     return (
-        <IconContainer>
-            <IconWrapper width={props.width} height={props.height}>
+        <FlexWrapper alignItems={"flex-end"} gap={"14px"} >
                 <svg width={props.width || "50px"}
                      height={props.height || "50px"}
                      viewBox={props.viewBox || "0 0 50 50"}
@@ -34,28 +33,16 @@ export const ProgressIcon = (props: IconPropsType) => {
                      xmlnsXlink="http://www.w3.org/1999/xlink">
                     <use xlinkHref={`${iconsSprite}#${props.iconId}`}></use>
                 </svg>
-            </IconWrapper>
             <ProgressBar progress={props.progress}>
                 <ProgressText textPosition={props.textPosition || props.progress}>
                     {props.progress}%
                 </ProgressText>
             </ProgressBar>
-        </IconContainer>
+        </FlexWrapper>
     );
 };
 
-const IconContainer = styled.div`
-    display: flex;
-    align-items: flex-end;
-    gap: 14px;
-    max-width: 606px;
-`;
 
-const IconWrapper = styled.div<IconWrapperPropsType>`
-    width: ${props => props.width || "50px"};
-    height: ${props => props.height || "50px"};
-    display: flex;
-   `
 
 const ProgressBar = styled.div<ProgressTextPropsType>`
     position: relative;

@@ -9,6 +9,7 @@ import proj5 from '../../../assets/images/proj5.webp';
 import proj6 from '../../../assets/images/proj6.webp';
 import { SectionTitle } from '../../../components/SectionTitle';
 import { Work } from './work/Work';
+import {S} from './Works_Styles'
 
 
 const WorksData = [
@@ -47,7 +48,7 @@ const WorksData = [
 
 export const Works: React.FC = () => {
     return (
-        <section>
+        <S.Works>
             <Container>
                 <SectionTitle>Latest work</SectionTitle>
                 <FlexWrapper wrap="wrap" justify="center" gap="45px">
@@ -61,7 +62,7 @@ export const Works: React.FC = () => {
                     ))}
                 </FlexWrapper>
             </Container>
-        </section>
+        </S.Works>
     );
 };
 

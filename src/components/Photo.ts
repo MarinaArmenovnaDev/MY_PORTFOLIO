@@ -18,9 +18,9 @@ export const Photo = styled.img<PhotoPropsType>`
     
 
     @media ${Theme.media.mobile} {
-        max-width: 240px;
+        max-width: 280px;
         width: 100%;
-        height: 300px;
-        margin: 0;
+        height: 350px;
+        //margin: 0 auto;
     }
 `;

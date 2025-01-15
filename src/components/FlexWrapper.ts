@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {Theme} from "../styles/Theme";
+import {ProgressIcon} from "./icon/progressIcon/ProgressIcon";
 
 type FlexWrapperPropsType = {
     direction?: string;
@@ -6,6 +8,8 @@ type FlexWrapperPropsType = {
     alignItems?: string;
     wrap?: string;
     gap?: string;
+
+    margin?: string;
 }
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`
@@ -16,5 +20,6 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
     flex-wrap: ${ props => props.wrap || 'nowrap'};
     gap: ${ props => props.gap || 'auto'};
     height: 100%;
+    margin: ${props => props.margin || '0'};
     
 `

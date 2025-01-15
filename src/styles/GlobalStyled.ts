@@ -35,20 +35,6 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
     }
     
-    section{
-        margin-bottom: 150px;
-        
-        @media ${Theme.media.desktop}{
-            margin-bottom: 78px;
-        }
-
-        @media ${Theme.media.mobile}{
-
-            &:last-of-type{
-                margin-bottom: 50px;
-            }
-        }
-        }
 
     section:nth-of-type(2n){
         background-color: ${Theme.colors.primaryBg};

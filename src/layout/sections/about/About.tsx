@@ -10,7 +10,7 @@ import {TextWrapper} from "../../../components/TextWrapper";
 import {Theme} from "../../../styles/Theme";
 import {PhotoWrapper} from "../../../components/PhotoWrapper";
 import {Text} from "../../../components/Text";
-import {S} from "./About_Styles"
+import {ProgressIconsWrapper, S} from "./About_Styles"
 
 const progressIconsData = [
     {iconId: "photoshop", progress: 70, textPosition: 70},
@@ -26,10 +26,10 @@ export const About: React.FC = () => {
         <S.About>
             <Container>
                 <FlexWrapper justify="space-around" wrap={"wrap"}>
-                    <PhotoWrapper maxWidth={"410px"} height={"502px"} right={"-20px"} bottom={"-20px"}
-                                  margin={"0 91px 0 0"}
-                                  backgroundColor={"rgba(251, 63, 92, 0.1)" } borderRadius={"10px"}>
-                        <Photo src={photo} srcSet={`${photo} 1x, ${photo2x} 2x`} maxWidth={"361px"} height={"452px"}/>
+                    <PhotoWrapper maxWidth={"361px"} height={"452px"} right={"-50px"} bottom={"-50px"}
+                                  margin={"0 140px 0 0"}
+                                  backgroundColor={"rgba(251, 63, 92, 0.08)" } borderRadius={"10px"}>
+                        <Photo src={photo} srcSet={`${photo} 1x, ${photo2x} 2x`}/>
                     </PhotoWrapper>
                     <TextWrapper maxWidth={"600px"}>
                         <S.Title>I am a creative Graphic & UI Designer</S.Title>
@@ -39,8 +39,8 @@ export const About: React.FC = () => {
                         </Text>
                         <Button>Download CV</Button>
                         <Button backgroundColor={"transparent"} borderColor={"1px solid #fb3f5c"}
-                                color={Theme.colors.accent}>View Portfolio</Button>
-                        <S.IconWrapper>
+                                color={Theme.colors.accent} >View Portfolio</Button>
+                        <ProgressIconsWrapper wrap={"wrap"} gap={"16px"} margin={" 50px 0 0 "} >
                             {progressIconsData.map((icon, index) => (
                                 <ProgressIcon
                                     key={index}
@@ -52,7 +52,7 @@ export const About: React.FC = () => {
                                     textPosition={icon.textPosition}
                                 />
                             ))}
-                        </S.IconWrapper>
+                        </ProgressIconsWrapper>
                     </TextWrapper>
                 </FlexWrapper>
             </Container>

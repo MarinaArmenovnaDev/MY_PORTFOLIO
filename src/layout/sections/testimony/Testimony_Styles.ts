@@ -1,26 +1,12 @@
 import styled from "styled-components";
 import {Theme} from "../../../styles/Theme";
-import {IconWrapper} from "../../../components/icon/Icon";
+
 
 const Testimony = styled.section`
     display: flex;
     align-items: center;
+`;
 
-    @media ${Theme.media.tablet} {
-        ${IconWrapper}[data-iconid="quotes"] {
-            width: 80px;
-            top: 65px;
-            left: 15%;
-        }
-    }
-
-    @media ${Theme.media.mobile} {
-        ${IconWrapper}[data-iconid="quotes"]{
-            width: 60px;
-            top: 50px;
-        }
-    }
-`
 
 
 const Pagination = styled.div`

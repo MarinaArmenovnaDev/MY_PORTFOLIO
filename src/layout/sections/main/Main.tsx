@@ -8,6 +8,8 @@ import { TextWrapper } from "../../../components/TextWrapper";
 import { PhotoWrapper } from "../../../components/PhotoWrapper";
 import { Text } from "../../../components/Text";
 import {S} from "./Main_Styles"
+import photo from "../../../assets/images/mainPhoto.jpg";
+import photo2x from "../../../assets/images/mainPhoto@2x.jpg";
 
 
 export const Main: React.FC = () => {
@@ -24,8 +26,9 @@ export const Main: React.FC = () => {
                         </Text>
                         <Button>Download CV</Button>
                     </TextWrapper>
-                    <PhotoWrapper maxWidth={"621px"} height={"692px"} right={"-20px"}>
-                        <Photo src={mainImg} alt="main photo" maxWidth={"432px"} height={"541px"}/>
+                    <PhotoWrapper maxWidth={"621px"} height={"692px"} right={"-20px"} bottom={"-20px"}>
+                        <Photo src={mainImg} srcSet={`${photo} 1x, ${photo2x} 2x`
+                        } alt="main photo" maxWidth={"432px"} height={"541px"}/>
                     </PhotoWrapper>
                 </FlexWrapper>
             </Container>

@@ -10,7 +10,7 @@ export const Theme = {
     },
 
     media: {
-        desktop: "screen and (max-width: 1130px)",
+        desktop: "screen and (max-width: 1145px)",
         tablet: "screen and (max-width: 992px)",
         mobile: "screen and (max-width: 576px)",
     }

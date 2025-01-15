@@ -1,5 +1,15 @@
 import styled from "styled-components";
 import {font} from "../../../styles/Common";
+import {Theme} from "../../../styles/Theme";
+import {Button} from "../../../components/Button.";
+
+const Contacts = styled.section`
+    padding: 99px 0 190px;
+
+    @media ${Theme.media.mobile}{
+        padding:50px 0 77px
+    }
+`
 
 const Form = styled.form`
     max-width: 524px;
@@ -7,26 +17,26 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 35px;
-    
-    
+
+
     textarea {
         resize: none;
         height: 155px;
         padding-top: 15px;
-        ${font({weight:400, Fmax:18, Fmin:11})}
+        ${font({weight: 400, Fmax: 18, Fmin: 11})}
     }
 `;
 
 const Label = styled.label`
-    margin-bottom: 7px;
-    ${font({weight:400, Fmax:16, Fmin:11})}
+    ${font({weight: 400, Fmax: 16, Fmin: 11})}
 `;
 
 const Field = styled.input`
     width: 100%;
     height: 50px;
     padding: 0 15px;
-    ${font({weight:400, Fmax:18, Fmin:11})}
+    margin-top: 7px;
+    ${font({weight: 400, Fmax: 18, Fmin: 11})}
 `;
 
 const Navigation = styled.div`
@@ -53,6 +63,7 @@ const MapLink = styled.a`
 `;
 
 export const S = {
+    Contacts,
     Form,
     Label,
     Field,

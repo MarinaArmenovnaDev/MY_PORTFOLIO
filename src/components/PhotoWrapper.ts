@@ -20,7 +20,7 @@ export const PhotoWrapper = styled.div<PhotoWrapperPropsType>`
     max-width: ${props => props.maxWidth};
     width: 100%;
     height: ${props => props.height};
-    margin:${props => props.margin};
+    margin: ${props => props.margin};
 
     &::before {
         content: '';
@@ -33,21 +33,31 @@ export const PhotoWrapper = styled.div<PhotoWrapperPropsType>`
         clip-path: polygon(100% 0, 100% 100%, 0 100%);
         border-radius: ${props => props.borderRadius};
         z-index: -1;
+
+        @media ${Theme.media.mobile} {
+            bottom: -20px ;
+            right: -20px;
+        }
+
+
+    }
+
+    @media ${Theme.media.desktop} {
+        margin-bottom: 57px;
         
     }
 
     @media ${Theme.media.tablet} {
-        margin: 0 auto;
+        margin: 0 0 57px;
     }
 
     @media ${Theme.media.mobile} {
         max-width: 306px;
         width: 100%;
         height: 376px;
+
     }
 
-    @media ${Theme.media.desktop} {
-        margin-bottom: 57px;
-    }
+
 
 `;

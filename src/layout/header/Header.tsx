@@ -22,7 +22,10 @@ export const Header: React.FC = () => {
         <S.Header>
             <Container>
                 <FlexWrapper justify="space-between">
-                    <S.Logo href={""}>Damadams</S.Logo>
+                    <S.Logo href={""}>Damadams
+                        <h1>UI Designer</h1>
+                    </S.Logo>
+
 
                     {width <= breakpoint? <MobileMenu/> :  <DesktopMenu/>}
 

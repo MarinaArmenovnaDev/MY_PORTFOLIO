@@ -11,7 +11,12 @@ const Logo = styled.a`
     font-weight: 400;
     font-size: 36px;
     font-family: "Nova Mono", serif;
+    
+    h1{
+        display: none;
+    }
 `
+
 
 export const S ={
     Header,

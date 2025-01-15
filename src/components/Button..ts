@@ -5,6 +5,7 @@ type ButtonPropsType = {
     color?: string;
     backgroundColor?: string
     borderColor?: string
+    marginBottom?: string
 }
 
 export const Button = styled.button<ButtonPropsType>`
@@ -23,7 +24,7 @@ export const Button = styled.button<ButtonPropsType>`
     }
 
     @media ${Theme.media.desktop} {
-        &:last-of-type{
+        &:last-child{
             margin-bottom: 50px;
         }
     }

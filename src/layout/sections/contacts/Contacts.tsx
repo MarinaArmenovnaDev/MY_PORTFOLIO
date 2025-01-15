@@ -7,7 +7,7 @@ import {S} from "./Contacts_Styles"
 
 export const Contacts: React.FC = () => {
     return (
-        <section>
+        <S.Contacts>
             <Container>
                 <SectionTitle>Get in Touch</SectionTitle>
                 <FlexWrapper justify={'space-around'} wrap={'wrap'}>
@@ -19,7 +19,7 @@ export const Contacts: React.FC = () => {
                             <S.Field type={"text"} placeholder={"Question about your article"}/>
                         </S.Label>
                         <S.Field as={"textarea"} placeholder={"Your message starts with…"}/>
-                        <Button>Send</Button>
+                        <Button type={"submit"}>Send</Button>
                     </S.Form>
                     <S.Navigation>
                         <S.MapContainer>
@@ -41,7 +41,7 @@ export const Contacts: React.FC = () => {
                     </S.Navigation>
                 </FlexWrapper>
             </Container>
-        </section>
+        </S.Contacts>
     );
 };
 

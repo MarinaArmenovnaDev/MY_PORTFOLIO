@@ -10,6 +10,10 @@ type TextWrapperPropsType = {
 export const TextWrapper = styled.div<TextWrapperPropsType>`
     max-width: ${props => props.maxWidth};
     width: 100%;
+
+    @media ${Theme.media.desktop} {
+        text-align: center;
+    }
     
     @media ${Theme.media.tablet} {
         text-align: center;

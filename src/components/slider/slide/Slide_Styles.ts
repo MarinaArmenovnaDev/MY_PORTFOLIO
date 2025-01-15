@@ -20,6 +20,31 @@ const Slide = styled.div`
     margin: 0 auto;
     border-radius: 140px 0;
     background-color: ${Theme.colors.primaryBg};
+    position: relative;
+    z-index:1;
+
+    & > svg:first-of-type{
+        position: absolute;
+        top: 66px;
+        left: 81px;
+        transform:translate(-50%);
+        z-index:0;
+    }
+
+    @media ${Theme.media.tablet} {
+        & > svg:first-of-type  {
+            width: 80px;
+        }
+    }
+
+    @media ${Theme.media.mobile} {
+        & > svg:first-of-type  {
+            width: 60px;
+            height: 56px;
+            left: 15%;
+        }
+    }
+    
 
     @media ${Theme.media.mobile} {
         border-radius: 60px 0;
