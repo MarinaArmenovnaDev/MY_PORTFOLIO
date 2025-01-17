@@ -7,10 +7,10 @@ import {DesktopMenu} from "./headerMenu/desktopMenu/DesktopMenu";
 import {MobileMenu} from "./headerMenu/mobileMenu/MobileMenu";
 
 
+
 export const Header: React.FC = () => {
     const [width, setWidth] = React.useState(window.innerWidth);
     const breakpoint = 1130;
-
 
     React.useEffect(() => {
         const handleWindowResize = () => setWidth(window.innerWidth)
@@ -22,14 +22,10 @@ export const Header: React.FC = () => {
         <S.Header>
             <Container>
                 <FlexWrapper justify="space-between">
-                    <S.Logo href={""}>Damadams
+                    <S.Logo>Damadams
                         <h1>UI Designer</h1>
                     </S.Logo>
-
-
                     {width <= breakpoint? <MobileMenu/> :  <DesktopMenu/>}
-
-
                 </FlexWrapper>
             </Container>
         </S.Header>

@@ -6,6 +6,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 const About = styled.section`
     display: flex;
     padding: 110px 0 216px;
+    position: relative;
 
     @media ${Theme.media.mobile}{
         padding: 65px 0 94px;

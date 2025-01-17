@@ -1,28 +1,52 @@
-import React from 'react';
+import React, {ElementRef, useRef} from 'react';
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Container} from "../../../components/Container";
 import {Button} from "../../../components/Button.";
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import {S} from "./Contacts_Styles"
+import {S} from "./Contacts_Styles";
+import emailjs from '@emailjs/browser';
 
 export const Contacts: React.FC = () => {
+    const form = useRef<ElementRef<'form'>>(null);
+
+    const sendEmail = (e: any) => {
+        e.preventDefault();
+
+        if(!form.current) return;
+
+        emailjs
+            .sendForm("service_iwvaest", 'template_7ssgdk9', form.current, {
+                publicKey: 'pwPaQ6c6-EshyX_pk',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+        e.target.reset();
+    };
+
+
     return (
-        <S.Contacts>
+        <S.Contacts id="contact">
             <Container>
                 <SectionTitle>Get in Touch</SectionTitle>
                 <FlexWrapper justify={'space-around'} wrap={'wrap'}>
-                    <S.Form>
-                        <S.Label>Your Email Address
-                            <S.Field type={"text"} placeholder={"something@website.com"}/>
-                        </S.Label>
-                        <S.Label>Subject
-                            <S.Field type={"text"} placeholder={"Question about your article"}/>
-                        </S.Label>
-                        <S.Field as={"textarea"} placeholder={"Your message starts with…"}/>
-                        <Button type={"submit"}>Send</Button>
+                    <S.Form  ref={form} onSubmit={sendEmail}>
+                            <S.Label>Your Email Address
+                                <S.Field required type={"text"} placeholder={"something@website.com"} name={"user_email"}/>
+                            </S.Label>
+                            <S.Label>Subject
+                                <S.Field required type={"text"} placeholder={"Question about your article"} name={"subject"}/>
+                            </S.Label>
+                            <S.Field  required as={"textarea"} placeholder={"Your message starts with…"} name={"message"}/>
+                            <Button type={"submit"}>Send</Button>
                     </S.Form>
                     <S.Navigation>
-                        <S.MapContainer>
+                    <S.MapContainer>
                             <S.MapLink href="https://yandex.by/maps/157/minsk/?utm_medium=mapframe&utm_source=maps">
                                 Минск
                             </S.MapLink>

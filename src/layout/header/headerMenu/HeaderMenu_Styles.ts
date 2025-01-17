@@ -1,5 +1,7 @@
 import styled, {css} from "styled-components";
 import {Theme} from "../../../styles/Theme";
+import {Link} from "react-scroll";
+
 
 //menu
 const NavList = styled.ul`
@@ -7,9 +9,10 @@ const NavList = styled.ul`
     gap: 52px;
 `
 const NavItems = styled.li`
+    cursor: pointer;
 `
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
     font-weight: 400;
     font-size: 24px;
     color: ${Theme.colors.accentFont};
@@ -30,10 +33,11 @@ const NavLink = styled.a`
         transition: opacity 0.3s ease;
     }
 
-    &:hover::after {
+    &:hover::after,&.active::after {
         opacity: 1;
     }
 `
+
 
 // MobileMenu
 const MobileMenu = styled.nav`
@@ -107,20 +111,25 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     bottom: 0;
     right: 0;
     z-index: 999;
-    display: none;
-    transition: opacity 0.3s ease;
-
-    ${props => props.isOpen && css<{ isOpen: boolean }>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 0.8s ease-in-out;
 
     ${NavList} {
         flex-direction: column;
         align-items: center;
-        gap: 25px;
+        gap: 10px;
+        transition: 1s ease-in-out;
     }
+
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
+        transform: translateY(0);
+        & ${NavList} {
+            gap: 50px;
+        }
+    `}
 `
 
 //DesktopMenu

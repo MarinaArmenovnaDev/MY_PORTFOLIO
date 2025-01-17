@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import {font} from "../../../styles/Common";
 import {Theme} from "../../../styles/Theme";
-import {Button} from "../../../components/Button.";
 
 const Contacts = styled.section`
     padding: 99px 0 190px;
+    position: relative;
 
     @media ${Theme.media.mobile}{
         padding:50px 0 77px

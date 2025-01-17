@@ -9,6 +9,7 @@ const Footer = styled.footer`
     align-items: center;
     min-height: 230px;
     height: 100%;
+    position: relative;
 
     @media screen and (max-width: 1006px) {
         ${FlexWrapper}:first-child{

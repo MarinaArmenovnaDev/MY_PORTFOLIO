@@ -18,7 +18,7 @@ export const Button = styled.button<ButtonPropsType>`
     background-color: ${props => props.backgroundColor || Theme.colors.accent};
     border: ${props => props.borderColor || "none"};
 
-    & + button {
+    & + a {
         margin-left: 16px;
         
     }
